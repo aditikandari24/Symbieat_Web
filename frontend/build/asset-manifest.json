@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.35b3deba.css",
+    "main.js": "/static/js/main.644762a6.js",
+    "static/js/592.bf6ca574.chunk.js": "/static/js/592.bf6ca574.chunk.js",
+    "static/media/pavbhaji.png": "/static/media/pavbhaji.cac426b2bc326d6e2ed3.png",
+    "static/media/nimbupani.png": "/static/media/nimbupani.7964efd145c1cf91013b.png",
+    "static/media/espresso.jpg": "/static/media/espresso.5a398ab7b61ea7776269.jpg",
+    "static/media/chickenfriedrice.png": "/static/media/chickenfriedrice.f5a8fa460dc0881e055b.png",
+    "static/media/chickennoodles.png": "/static/media/chickennoodles.0cd9029f3aa4265d2fb0.png",
+    "static/media/poha(1).png": "/static/media/poha(1).cbc69b97374be2119103.png",
+    "static/media/chickenburger.png": "/static/media/chickenburger.4e2eac82fe94147a55cc.png",
+    "static/media/quotes3.jpg": "/static/media/quotes3.18c0b99e92946d657589.jpg",
+    "static/media/quotes6.jpg": "/static/media/quotes6.da585c6137f68c4c1639.jpg",
+    "static/media/meduvada.jpg": "/static/media/meduvada.2f3deff974f680971d7b.jpg",
+    "static/media/strawberry.jpg": "/static/media/strawberry.5a7eb0905cb8adf2d608.jpg",
+    "static/media/quotes4.jpg": "/static/media/quotes4.0442bdfbefab0a5c6901.jpg",
+    "static/media/americano.png": "/static/media/americano.d46e57c311264f658758.png",
+    "static/media/empty.gif": "/static/media/empty.644ecc4e5dd68dfc0977.gif",
+    "static/media/quotes2.png": "/static/media/quotes2.fedd6e4c09d7034889e4.png",
+    "static/media/quotes5.jpg": "/static/media/quotes5.acba9842cf5b6c0fcb9b.jpg",
+    "static/media/quotes1.jpg": "/static/media/quotes1.8aea99253be4bdae02e8.jpg",
+    "static/media/mangoshake1.jpg": "/static/media/mangoshake1.2b6353999873553c68c8.jpg",
+    "static/media/cold.png": "/static/media/cold.f36ed56cf98bdf654152.png",
+    "static/media/latte.png": "/static/media/latte.8fb0981a3b98127744b5.png",
+    "static/media/lemonicetea.jpg": "/static/media/lemonicetea.b2e3578c2d70b5176d31.jpg",
+    "static/media/chocolate.jpg": "/static/media/chocolate.663e9e155d62d49fed89.jpg",
+    "index.html": "/index.html",
+    "main.35b3deba.css.map": "/static/css/main.35b3deba.css.map",
+    "main.644762a6.js.map": "/static/js/main.644762a6.js.map",
+    "592.bf6ca574.chunk.js.map": "/static/js/592.bf6ca574.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35b3deba.css",
+    "static/js/main.644762a6.js"
+  ]
+}
