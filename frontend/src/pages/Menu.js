@@ -7,17 +7,17 @@ import poha from '../Images/poha(1).png';
 import meduvada from '../Images/meduvada.jpg';
 import mixjuice from '../Images/mixjuice.jpeg';
 import mango from '../Images/mangoshake1.jpg';
-import nimbu from '../Images/nimbupani.png'
-import chocolate from '../Images/chocolate.jpg'
-import strawberry from '../Images/strawberry.jpg'
-import espresso from '../Images/espresso.jpg'
-import americano from '../Images/americano.png'
-import latte from '../Images/latte.png'
-import cold from '../Images/cold.png'
-import sicetea from '../Images/sicetea.jpg'
-import lemon from '../Images/lemonicetea.jpg'
+import nimbu from '../Images/nimbupani.png';
+import chocolate from '../Images/chocolate.jpg';
+import strawberry from '../Images/strawberry.jpg';
+import espresso from '../Images/espresso.jpg';
+import americano from '../Images/americano.png';
+import latte from '../Images/latte.png';
+import cold from '../Images/cold.png';
+import sicetea from '../Images/sicetea.jpg';
+import lemon from '../Images/lemonicetea.jpg';
 import { addCartItem } from '../redux/productSlice';
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
 const Menu = () => {
   const [filter, setFilter] = useState('all');
@@ -44,7 +44,6 @@ const Menu = () => {
     { name: 'Lemon Iced Tea', image: lemon, category: 'Cafe', price: 40 },
   ];
 
-  // Function to sort menu items based on price
   const sortItems = (items, option) => {
     if (option === 'default') return items;
     if (option === 'priceLowToHigh') {
@@ -55,43 +54,144 @@ const Menu = () => {
     }
   };
 
-  // Function to filter menu items based on category
   const filterItems = (items, category) => {
     if (category === 'all') return items;
     return items.filter(item => item.category === category);
   };
 
-  // Filter and sort menu items
   const filteredItems = filterItems(menuItems, filter);
   const sortedAndFilteredItems = sortItems(filteredItems, sortingOption);
 
+  const styles = {
+    menuContainer: {
+      backgroundColor: '#64748b',
+      padding: '20px',
+      fontFamily: 'Arial, sans-serif',
+    },
+    menuHeader: {
+      backgroundColor: '#1f2937',
+      padding: '16px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: '20px',
+    },
+    logo: {
+      color: 'white',
+      fontSize: '1.5em',
+      fontWeight: 'bold',
+    },
+    dropdowns: {
+      display: 'flex',
+      gap: '16px',
+    },
+    dropdownLabel: {
+      color: 'white',
+      marginRight: '8px',
+    },
+    dropdownSelect: {
+      padding: '8px',
+      borderRadius: '4px',
+      backgroundColor: '#374151',
+      color: 'white',
+      border: 'none',
+      outline: 'none',
+    },
+    menuItems: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '20px',
+    },
+    menuItem: {
+      backgroundColor: '#e2e8f0',
+      padding: '20px',
+      borderRadius: '8px',
+      textAlign: 'center',
+      transition: 'transform 0.3s',
+    },
+    menuItemHover: {
+      transform: 'translateY(-5px)',
+    },
+    menuItemImage: {
+      width: '100px',
+      height: '100px',
+      objectFit: 'cover',
+      borderRadius: '50%',
+      marginBottom: '12px',
+    },
+    menuItemDetails: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    menuItemName: {
+      fontSize: '1.2em',
+      fontWeight: 'bold',
+      marginBottom: '8px',
+    },
+    menuItemPrice: {
+      color: '#4b5563',
+      marginBottom: '16px',
+    },
+    quantitySelection: {
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: '12px',
+    },
+    quantityLabel: {
+      marginRight: '8px',
+      color: '#4b5563',
+    },
+    quantityDropdown: {
+      padding: '8px',
+      borderRadius: '4px',
+      backgroundColor: '#d1d5db',
+      color: '#4b5563',
+      border: 'none',
+      outline: 'none',
+    },
+    addToCartButton: {
+      padding: '8px 16px',
+      backgroundColor: '#3b82f6',
+      color: 'white',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s',
+    },
+    addToCartButtonHover: {
+      backgroundColor: '#2563eb',
+    },
+  };
+
   return (
-    <div style={{ backgroundColor: '#64748b' }}>
-      {/* Header */}
-      <nav className="bg-gray-800 p-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="text-white text-xl font-bold">Order Now</div>
-          {/* Sort */}
-          <div className="flex items-center">
-            <div className="text-white">Sort by:</div>
+    <div style={styles.menuContainer}>
+      {/* Header section */}
+      <nav style={styles.menuHeader}>
+        {/* Logo */}
+        <div style={styles.logo}>Order Now</div>
+        {/* Sort and Filter dropdowns */}
+        <div style={styles.dropdowns}>
+          {/* Sort dropdown */}
+          <div>
+            <label style={styles.dropdownLabel}>Sort by:</label>
             <select
               value={sortingOption}
               onChange={(e) => setSortingOption(e.target.value)}
-              className="px-2 py-1 rounded-md bg-gray-700 text-white ml-2"
+              style={styles.dropdownSelect}
             >
               <option value="default">Default</option>
               <option value="priceLowToHigh">Price low to high</option>
               <option value="priceHighToLow">Price high to low</option>
             </select>
           </div>
-          {/* Filter */}
-          <div className="flex items-center">
-            <div className="text-white">Filter by:</div>
+          {/* Filter dropdown */}
+          <div>
+            <label style={styles.dropdownLabel}>Filter by:</label>
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="px-2 py-1 rounded-md bg-gray-700 text-white ml-2"
+              style={styles.dropdownSelect}
             >
               <option value="all">All</option>
               <option value="Canteen">Canteen</option>
@@ -103,35 +203,44 @@ const Menu = () => {
       </nav>
 
       {/* Menu Items */}
-      <div className="grid grid-cols-3 gap-4 p-4">
-        {/* Render each menu item */}
+      <div style={styles.menuItems}>
         {sortedAndFilteredItems.map((menuItem, index) => (
-          <div key={index} className="bg-slate-400 p-4 rounded-md flex flex-col items-center">
+          <div key={index} style={styles.menuItem}>
             {/* Menu Item Image */}
             <img
               src={menuItem.image}
               alt={menuItem.name}
-              className="w-40 h-40 object-cover mb-3"
+              style={styles.menuItemImage}
             />
-            {/* Menu Item Name */}
-            <div className="text-lg font-semibold">{menuItem.name}</div>
-            {/* Price */}
-            <div className="text-gray-700">Price: Rs.{menuItem.price}</div>
-            {/* Quantity Selection */}
-            <div className="flex items-center mt-2">
-              <label className="mr-2 text-gray-700">Quantity:</label>
-              <select className="px-2 py-1 rounded-md bg-gray-300 text-gray-700">
-                {[...Array(10)].map((_, i) => (
-                  <option key={i} value={i + 1}>
-                    {i + 1}
-                  </option>
-                ))}
-              </select>
+            {/* Menu Item Details */}
+            <div style={styles.menuItemDetails}>
+              <div style={styles.menuItemName}>{menuItem.name}</div>
+              <div style={styles.menuItemPrice}>Price: Rs.{menuItem.price}</div>
+              {/* Quantity Selection */}
+              <div style={styles.quantitySelection}>
+                <label style={styles.quantityLabel}>Quantity:</label>
+                <select style={styles.quantityDropdown}>
+                  {[...Array(10)].map((_, i) => (
+                    <option key={i} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
+                </select>
+              </div>
               {/* Add to Cart Button */}
-              <button onClick={() => {
-                console.log(menuItem)
-                dispatch(addCartItem(menuItem))
-                }} className="ml-2 px-3 py-1 bg-blue-500 text-white rounded-md">
+              <button
+                onClick={() => {
+                  console.log(menuItem);
+                  dispatch(addCartItem(menuItem));
+                }}
+                style={styles.addToCartButton}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = styles.addToCartButtonHover.backgroundColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = styles.addToCartButton.backgroundColor;
+                }}
+              >
                 Add to Cart
               </button>
             </div>
@@ -143,4 +252,5 @@ const Menu = () => {
 };
 
 export default Menu;
+
 
